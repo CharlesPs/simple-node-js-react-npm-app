@@ -3,11 +3,11 @@ pipeline {
         docker {
             image 'node:6-alpine' 
             args '-p 3000:3000'
-            args '-u 0:0' 
+            args '-u root' 
         }
     }
     environment {
-        CI = 'true'
+        HOME = "."
     }
     stages {
         stage('Build') { 
